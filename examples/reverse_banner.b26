@@ -1,0 +1,12 @@
+string source = "BASIC-26 DEMO"
+string target = "............."
+let size = 13
+let i = 0
+
+label fill
+set target(i) = source(size - i - 1)
+let i = i + 1
+if i < size then goto fill
+
+print source
+print target

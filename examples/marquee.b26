@@ -1,0 +1,20 @@
+string text = "BASIC-26 ROCKS"
+string next = ".............."
+let size = 14
+let turn = 0
+
+label show
+print text
+let i = 0
+
+label shift
+if i == size - 1 then goto wrap
+set next(i) = text(i + 1)
+let i = i + 1
+goto shift
+
+label wrap
+set next(size - 1) = text(0)
+text = next
+let turn = turn + 1
+if turn < 6 then goto show

@@ -1,0 +1,17 @@
+let state = 0
+let cycles = 0
+
+label show
+if state == 0 then print "RED"
+if state == 1 then print "GREEN"
+if state == 2 then print "YELLOW"
+
+let state = state + 1
+if state < 3 then goto keep_state
+let state = 0
+let cycles = cycles + 1
+
+label keep_state
+if cycles < 3 then goto show
+
+print "STOP"

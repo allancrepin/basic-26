@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="basic-26/basic-26.vcxproj" Id="aae88f74-fa94-40ce-b13f-42823f218a31" />
+</Solution>

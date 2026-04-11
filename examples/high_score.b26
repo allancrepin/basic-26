@@ -1,0 +1,25 @@
+array scores(5)
+
+set scores(0) = 120
+set scores(1) = 90
+set scores(2) = 150
+set scores(3) = 150
+set scores(4) = 180
+
+let i = 0
+let best = 0
+
+label show_scores
+print scores(i)
+if scores(i) > best then goto new_best
+goto next_score
+
+label new_best
+let best = scores(i)
+print "NEW RECORD"
+
+label next_score
+let i = i + 1
+if i < 5 then goto show_scores
+
+print best

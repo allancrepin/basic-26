@@ -1,0 +1,11 @@
+let n = 10
+
+print "ROCKET CHECK"
+print "COUNTDOWN START"
+
+label countdown
+print n
+let n = n - 1
+if n >= 0 then goto countdown
+
+print "BLAST OFF"
