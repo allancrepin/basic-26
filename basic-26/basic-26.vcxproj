@@ -130,7 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="LineScriptJIT.cpp" />
+    <ClCompile Include="JIT.cpp" />
     <ClCompile Include="codegen.cpp" />
     <ClCompile Include="runner.cpp" />
     <ClCompile Include="runtime.cpp" />

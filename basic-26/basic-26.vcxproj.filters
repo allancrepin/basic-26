@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LineScriptJIT.cpp">
+    <ClCompile Include="JIT.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="codegen.cpp">
