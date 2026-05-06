@@ -3,7 +3,7 @@
 #include "common.h"
 
 enum class TokKind {
-    Let, Set, Array, String, Label, Goto, If, Then, Print,
+    Let, Set, Array, String, Label, Goto, If, Then, Print, Input,
     Identifier, Equal, EqualEqual, NotEqual,
     Greater, Less, GreaterEq, LessEq,
     Number, StringLiteral,

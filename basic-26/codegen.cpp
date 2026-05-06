@@ -95,6 +95,7 @@ int CodeGen::parseStatement() {
     if (ts.at(TokKind::Goto)) return parseGoto();
     if (ts.at(TokKind::If)) return parseIf();
     if (ts.at(TokKind::Print)) return parsePrint();
+	if (ts.at(TokKind::Input)) return parseInput();
 
     if (ts.at(TokKind::Identifier)) {
         size_t saved = ts.pos;
@@ -157,6 +158,19 @@ int CodeGen::parsePrint() {
     }
 
     if (ts.at(TokKind::Semicolon)) ts.consume();
+    return emitImm(0);
+}
+
+int CodeGen::parseInput() {
+    ts.expect(TokKind::Input);
+    std::string name = ts.expect(TokKind::Identifier).lexeme;
+    if (ts.at(TokKind::Semicolon)) ts.consume();
+    VarInfo info = reg.lookup(name);
+    if (info.type != Type::Int)
+        throw std::runtime_error("input can only be used with int variables");
+    as.mov(asmjit::x86::rcx, kEnv);
+    as.mov(asmjit::x86::rdx, asmjit::Imm(info.slot));
+    emitCall((void*)rt_input);
     return emitImm(0);
 }
 

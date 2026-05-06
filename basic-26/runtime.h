@@ -55,3 +55,4 @@ char* rt_string_concat(RuntimeEnv* e, int slotA, int slotB);
 void rt_string_assign_ptr(RuntimeEnv* e, int slot, char* src);
 int64_t rt_string_get(RuntimeEnv* e, int slot, int64_t idx);
 void rt_string_set(RuntimeEnv* e, int slot, int64_t idx, int64_t val);
+void rt_input(RuntimeEnv* e, int slot);

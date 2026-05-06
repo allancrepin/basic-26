@@ -37,6 +37,7 @@ struct CodeGen {
     void emitVarStore(int varSlot, int tmpSlot);
     int emitBinOp(TokKind op, int lhs, int rhs);
     int parseStatement();
+	int parseInput();
     int parsePrint();
     int parseDecl();
     int parseLabelDecl();

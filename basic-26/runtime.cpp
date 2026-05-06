@@ -154,3 +154,12 @@ void rt_string_set(RuntimeEnv* e, int slot, int64_t idx, int64_t val) {
     }
     s.data[idx] = (int8_t)(val & 0xFF);
 }
+
+void rt_input(RuntimeEnv* e, int slot) {
+    assert(slot < e->n_ints);
+    int64_t val;
+    if (scanf_s("%" SCNd64, &val) != 1) {
+        throw std::runtime_error("Failed to read input");
+    }
+	e->ints[slot] = val;
+}

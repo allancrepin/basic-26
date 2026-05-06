@@ -73,6 +73,7 @@ TokenStream tokenize(const std::string& src) {
             if (up == "STRING") k = TokKind::String;
             if (up == "SET")    k = TokKind::Set;
             if (up == "PRINT")  k = TokKind::Print;
+            if (up == "INPUT")  k = TokKind::Input;
             ts.tokens.push_back({ k, ident, 0 });
             continue;
         }

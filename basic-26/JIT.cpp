@@ -59,5 +59,11 @@ int main(int argc, char* argv[]) {
           "IF i < 5 THEN GOTO LOOP",
           "PRINT \"SUCCESS\"" });
 
+    run({ R"(print "hello")" });
+
+
+    run({ R"(print "hello")", "let x = 0", "print 1", "INPUT x", "print 2", "PRINT x"});
+    
+
     return 0;
 }
