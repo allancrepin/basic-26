@@ -61,8 +61,7 @@ int main(int argc, char* argv[]) {
 
     run({ R"(print "hello")" });
 
-
-    run({ R"(print "hello")", "let x = 0", "print 1", "INPUT x", "print 2", "PRINT x"});
+    run({ "let x = 0", "INPUT x", "PRINT x"});
     
 
     return 0;

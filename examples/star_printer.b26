@@ -1,0 +1,14 @@
+let x = 0
+print "How many stars would you like to print?"
+input x
+
+let i = 0
+label loop
+print "*"
+let i = i + 1
+if i < x then goto loop
+
+label end
+print "We printed"
+print x
+print "stars"
