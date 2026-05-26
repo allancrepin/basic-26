@@ -1,14 +1,35 @@
 #include "runner.h"
 
+static bool is_debug_flag(const std::string& arg) {
+    return arg == "--debug" || arg == "-d";
+}
+
 int main(int argc, char* argv[]) {
 
     if (argc == 2) {
+        if (is_debug_flag(argv[1])) {
+            std::cerr << "Usage: " << argv[0] << " [--debug|-d] [program.ls|program.b26]\n";
+            return 1;
+        }
         run_file(argv[1]);
         return 0;
     }
 
+    if (argc == 3) {
+        std::string first = argv[1];
+        std::string second = argv[2];
+        if (is_debug_flag(first)) {
+            run_file(second, true);
+            return 0;
+        }
+        if (is_debug_flag(second)) {
+            run_file(first, true);
+            return 0;
+        }
+    }
+
     if (argc > 2) {
-        std::cerr << "Usage: " << argv[0] << " [program.ls|program.b26]\n";
+        std::cerr << "Usage: " << argv[0] << " [--debug|-d] [program.ls|program.b26]\n";
         return 1;
     }
 
