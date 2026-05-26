@@ -161,8 +161,8 @@ void run_file(const std::string& path, bool debug) {
         program += l + " ";
     if (!program.empty()) program.pop_back();
 
-    std::cout << "File       : " << path << "\n";
-    std::cout << "Program    : " << program << "\n";
+    //std::cout << "File       : " << path << "\n";
+    //std::cout << "Program    : " << program << "\n";
     if (debug)
         dump_source(source_builder.str());
 
@@ -199,7 +199,7 @@ void run_file(const std::string& path, bool debug) {
     }
 
     int64_t result = fn(&env);
-    std::cout << "JIT result : " << result << "\n\n";
+    //std::cout << "JIT result : " << result << "\n\n";
 
     rt.release(fn);
     env.free_all();
